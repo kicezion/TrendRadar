@@ -2642,7 +2642,7 @@ def render_html_content(
     </html>
     """
 
-    return html
+    return html.encode("utf-8").decode("utf-8") 
 
 
 def render_feishu_content(
