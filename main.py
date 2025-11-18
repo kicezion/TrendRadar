@@ -14,8 +14,7 @@ from email.utils import formataddr, formatdate, make_msgid
 from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Tuple, Optional, Union
-from email.header import Header
-from email.utils import formataddr
+
 
 import pytz
 import requests
@@ -3768,7 +3767,8 @@ def send_to_email(
 
         # 严格按照 RFC 标准设置 From header
         sender_name = "TrendRadar"
-        msg["From"] = formataddr((sender_name, from_email))
+        msg["From"] = formataddr((str(Header(sender_name, "utf-8")), from_email))
+        
 
         # 设置收件人
         recipients = [addr.strip() for addr in to_email.split(",")]
