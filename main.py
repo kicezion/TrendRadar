@@ -14,6 +14,8 @@ from email.utils import formataddr, formatdate, make_msgid
 from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Tuple, Optional, Union
+from email.header import Header
+from email.utils import formataddr
 
 import pytz
 import requests
