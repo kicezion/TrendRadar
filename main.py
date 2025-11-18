@@ -1607,16 +1607,15 @@ def generate_html_report(
     update_info: Optional[Dict] = None,
 ) -> str:
     """生成HTML报告"""
-   if is_daily_summary:
-    if mode == "current":
-        filename = "current_summary.html"
-    elif mode == "incremental":
-        filename = "incremental_summary.html"
+    if is_daily_summary:
+        if mode == "current":
+            filename = "current_summary.html"
+        elif mode == "incremental":
+            filename = "incremental_summary.html"
+        else:
+            filename = "daily_summary.html"
     else:
-        filename = "daily_summary.html"
-else:
-    filename = f"{format_time_filename()}.html"
-
+        filename = f"{format_time_filename()}.html"
 
     file_path = get_output_path("html", filename)
 
