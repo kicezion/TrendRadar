@@ -3797,13 +3797,13 @@ TrendRadar 热点分析报告
 请使用支持HTML的邮件客户端查看完整报告内容。
         """
 
-    text_part = MIMEText(text_content, "plain", "utf-8")
-    text_part.replace_header("Content-Transfer-Encoding", "8bit")
-    msg.attach(text_part)
-
-    html_part = MIMEText(html_content, "html", "utf-8")
-    html_part.replace_header("Content-Transfer-Encoding", "8bit")
-    msg.attach(html_part)
+        text_part = MIMEText(text_content, "plain", "utf-8")
+        text_part.replace_header("Content-Transfer-Encoding", "8bit")
+        msg.attach(text_part)
+   
+        html_part = MIMEText(html_content, "html", "utf-8")
+        html_part.replace_header("Content-Transfer-Encoding", "8bit")
+        msg.attach(html_part)
 
 
         print(f"正在发送邮件到 {to_email}...")
